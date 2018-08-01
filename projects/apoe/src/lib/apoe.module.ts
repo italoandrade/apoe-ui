@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { ApoeComponent } from './apoe.component';
+import {NgModule} from '@angular/core';
+import {ButtonComponent} from './button/button.component';
 
 @NgModule({
-  imports: [
-  ],
-  declarations: [ApoeComponent],
-  exports: [ApoeComponent]
+  imports: [],
+  declarations: [ButtonComponent],
+  exports: [ButtonComponent]
 })
-export class ApoeModule { }
+export class ApoeModule {
+}
