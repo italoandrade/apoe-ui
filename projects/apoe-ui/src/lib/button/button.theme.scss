@@ -1,0 +1,7 @@
+@mixin ap-theme-button($theme) {
+  ap-button,
+  [ap-button] {
+    background-color: map_get($theme, primary-color);
+    color: map_get($theme, primary-text-color);
+  }
+}

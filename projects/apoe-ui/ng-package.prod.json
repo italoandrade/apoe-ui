@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/apoe",
-  "deleteDestPath": false,
+  "dest": "../../dist/apoe-ui",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

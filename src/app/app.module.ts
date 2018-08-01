@@ -3,16 +3,23 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 
-// import {ApoeModule} from 'apoe';
-import {ApoeModule} from '../../projects/apoe/src/lib/apoe.module';
+// import {ApoeUiModule} from 'apoe-ui';
+import {ApoeUiModule} from '../../projects/apoe-ui/src/lib/apoe-ui.module';
+import {AppRoutingModule} from './app-routing.module';
+
+import {ButtonComponent} from './demo/button/button.component';
+import {HomeComponent} from './demo/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    ApoeModule
+    ApoeUiModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

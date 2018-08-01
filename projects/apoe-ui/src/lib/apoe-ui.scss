@@ -1,6 +1,8 @@
-@import "elevation/elevation";
-
-:host {
+::ng-deep * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
+
+::ng-deep body {
+  margin: 0;
 }

@@ -170,6 +170,86 @@
           }
         }
       }
+    },
+    "apoe-ui": {
+      "root": "projects/apoe-ui",
+      "sourceRoot": "projects/apoe-ui/src",
+      "projectType": "library",
+      "prefix": "ap",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/apoe-ui/tsconfig.lib.json",
+            "project": "projects/apoe-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/apoe-ui/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/apoe-ui/src/test.ts",
+            "tsConfig": "projects/apoe-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/apoe-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/apoe-ui/tsconfig.lib.json",
+              "projects/apoe-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "testg": {
+      "root": "projects/testg",
+      "sourceRoot": "projects/testg/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/testg/tsconfig.lib.json",
+            "project": "projects/testg/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/testg/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/testg/src/test.ts",
+            "tsConfig": "projects/testg/tsconfig.spec.json",
+            "karmaConfig": "projects/testg/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/testg/tsconfig.lib.json",
+              "projects/testg/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "apoe-demo"

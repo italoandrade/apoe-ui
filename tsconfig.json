@@ -23,6 +23,18 @@
       ],
       "apoe/*": [
         "dist/apoe/*"
+      ],
+      "apoe-ui": [
+        "dist/apoe-ui"
+      ],
+      "apoe-ui/*": [
+        "dist/apoe-ui/*"
+      ],
+      "testg": [
+        "dist/testg"
+      ],
+      "testg/*": [
+        "dist/testg/*"
       ]
     }
   }
