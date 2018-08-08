@@ -2,6 +2,6 @@
   ap-button,
   [ap-button] {
     background-color: map_get($theme, primary-color);
-    color: map_get($theme, primary-text-color);
+    color: map_get($theme, primary-color-text);
   }
 }

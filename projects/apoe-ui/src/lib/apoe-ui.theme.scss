@@ -6,6 +6,7 @@
   $secondary-text-color: rgba(0, 0, 0, 0.54);
   $disabled-text-color: rgba(0, 0, 0, 0.38);
   $hint-text-color: $disabled-text-color;
+  $error-text-color: #B00020;
 
   @if map_get($theme, dark) == true {
     $primary-text-color: rgba(255, 255, 255, 1);
@@ -18,23 +19,20 @@
     primary-color: ap-color(map_get($theme, primary-color-name), map_get($theme, primary-color-hue)),
     primary-color-name: map_get($theme, primary-color-name),
     primary-color-hue: map_get($theme, primary-color-hue),
+    primary-color-text: ap-text-color(map_get($theme, primary-color-name), map_get($theme, primary-color-hue)),
 
     accent-color: ap-color(map_get($theme, accent-color-name), map_get($theme, accent-color-hue)),
     accent-color-name: map_get($theme, accent-color-name),
     accent-color-hue: map_get($theme, accent-color-hue),
+    accent-color-text: ap-text-color(map_get($theme, accent-color-name), map_get($theme, accent-color-hue)),
+
     dark: map_get($theme, dark),
 
-    /*primary: map_get($theme, primary-color),
-    primary-hue: map_get($theme, primary-hue),
-    primary-color: ap-color(map_get($theme, primary-color), map_get($theme, primary-hue)),
-    accent: map_get($theme, accent-color),
-    accent-hue: map_get($accent, hue),
-    accent-color: ui-color(map_get($accent, color), map_get($accent, hue)),
-    is-dark: $is-dark,
     primary-text-color: $primary-text-color,
     secondary-text-color: $secondary-text-color,
     disabled-text-color: $disabled-text-color,
-    hint-text-color: $hint-text-color,*/
+    hint-text-color: $hint-text-color,
+    error-text-color: $error-text-color
   );
 
   @include ap-theme-button($theme);
