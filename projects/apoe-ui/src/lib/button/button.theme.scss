@@ -1,7 +1,56 @@
 @mixin ap-theme-button($theme) {
   ap-button,
   [ap-button] {
-    background-color: map_get($theme, primary-color);
-    color: map_get($theme, primary-color-text);
+    &:not(:disabled):not([disabled]) {
+      &:not(.text-button):not(.outlined-button) {
+        background-color: map_get($theme, primary-color);
+        color: map_get($theme, primary-color-text);
+      }
+      &.text-button {
+        color: map_get($theme, primary-color);
+      }
+      &.outlined-button {
+        color: map_get($theme, primary-color);
+      }
+    }
+    &.outlined-button {
+      border: 1px solid rgba(if(map_get($theme, dark) == true, white, black), 0.12);
+    }
+    &:disabled, &[disabled] {
+      &:not(.text-button):not(.outlined-button) {
+        background-color: rgba(map_get($theme, disabled-text-color), 0.20);
+        color: map_get($theme, disabled-text-color);
+      }
+
+      &.text-button,
+      &.outlined-button {
+        color: map_get($theme, disabled-text-color);
+      }
+    }
+
+    &:not(.text-button):not(.outlined-button):after {
+      background-color: map_get($theme, primary-color-text);
+    }
+
+    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):hover:after {
+      opacity: 0.08;
+    }
+    &:not(:disabled):not([disabled]).text-button:hover,
+    &:not(:disabled):not([disabled]).outlined-button:hover {
+      background-color: rgba(map_get($theme, primary-color), 0.08);
+    }
+
+    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):active:after,
+    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):focus:after {
+      opacity: 0.24;
+    }
+    &:not(:disabled):not([disabled]).text-button:active,
+    &:not(:disabled):not([disabled]).text-button:focus,
+    &:not(:disabled):not([disabled]).outlined-button:active,
+    &:not(:disabled):not([disabled]).outlined-button:focus {
+      background-color: rgba(map_get($theme, primary-color), 0.24);
+    }
   }
 }
+
+

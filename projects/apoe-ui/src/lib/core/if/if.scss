@@ -1,7 +1,0 @@
-@function ap-if($condition, $true-value, $false-value) {
-  @if $condition {
-    @return $true-value;
-  } @else {
-    @return $false-value;
-  }
-}

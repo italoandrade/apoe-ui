@@ -1,9 +1,54 @@
-<p>
-  button works!
-</p>
+<h2>
+  Button Demo
+</h2>
 
+<h4>Types of elements</h4>
+<div>
+  <ap-button>AP button</ap-button>
 
+  <code [innerText]="'<ap-button>AP Button</ap-button>'"></code>
+</div>
+<div>
+  <button ap-button>Actual button</button>
 
-<ap-button>AP Button</ap-button>
+  <code [innerText]="'<button ap-button>Actual Button</button>'"></code>
+</div>
+<div>
+  <a routerLink="/" ap-button>Link button</a>
 
-<button ap-button>Actual Button</button>
+  <code [innerText]="'<a routerLink=&quot;/&quot; ap-button>Link button</a>'"></code>
+</div>
+
+<h4>Types of buttons</h4>
+<div>
+  <ap-button class="text-button">Text button</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;text-button&quot;>Text button</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="outlined-button">Outlined button</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;outlined-button&quot;>Outlined button</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="contained-button">Contained button</ap-button>
+
+  <code [innerText]="'<ap-button>Contained button</ap-button>'"></code>
+</div>
+
+<h4>Types of buttons disabled</h4>
+<div>
+  <ap-button class="text-button" disabled>Text button disabled</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;text-button&quot; disabled>Text button disabled</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="outlined-button" disabled>Outlined button disabled</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;outlined-button&quot; disabled>Outlined button disabled</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="contained-button" disabled>Contained button disabled</ap-button>
+
+  <code [innerText]="'<ap-button disabled>Contained button disabled</ap-button>'"></code>
+</div>

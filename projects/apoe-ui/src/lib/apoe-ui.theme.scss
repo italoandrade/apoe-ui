@@ -35,5 +35,9 @@
     error-text-color: $error-text-color
   );
 
+  body {
+    color: $primary-text-color;
+  }
+
   @include ap-theme-button($theme);
 }
