@@ -7,10 +7,14 @@ import {Component, HostBinding, HostListener} from '@angular/core';
 })
 export class AppBarComponent {
   @HostBinding('class.scrolled') isScrolled: boolean;
+  title: string;
 
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled = !!window.scrollY;
   }
 
+  setTitle(title: string) {
+    this.title = title;
+  }
 }

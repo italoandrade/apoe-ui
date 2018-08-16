@@ -1,54 +1,146 @@
+@import "../core/core";
+
 @mixin ap-theme-button($theme) {
   ap-button,
   [ap-button] {
-    &:not(:disabled):not([disabled]) {
-      &:not(.text-button):not(.outlined-button) {
-        background-color: map_get($theme, primary-color);
-        color: map_get($theme, primary-color-text);
-      }
-      &.text-button {
-        color: map_get($theme, primary-color);
-      }
-      &.outlined-button {
-        color: map_get($theme, primary-color);
-      }
-    }
-    &.outlined-button {
+    &.outlined-button { // Outlined button
       border: 1px solid rgba(if(map_get($theme, dark) == true, white, black), 0.12);
     }
-    &:disabled, &[disabled] {
-      &:not(.text-button):not(.outlined-button) {
+    &:disabled, &[disabled] { // Disabled buttons
+      &:not(.text-button):not(.outlined-button):not(.icon-button) { // Contained button
         background-color: rgba(map_get($theme, disabled-text-color), 0.20);
         color: map_get($theme, disabled-text-color);
       }
 
-      &.text-button,
-      &.outlined-button {
+      &.text-button, // Text button
+      &.outlined-button, // Outlined button
+      &.icon-button { // Icon button
+        background-color: transparent;
         color: map_get($theme, disabled-text-color);
       }
     }
 
-    &:not(.text-button):not(.outlined-button):after {
-      background-color: map_get($theme, primary-color-text);
+    &:not(.primary-color):not(.accent-color) { // Normal color - grey
+      &:not(.text-button):not(.outlined-button):not(.icon-button):after { // Contained button hover
+        background-color: ap-color('grey');
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):hover:after { // Not disabled contained button hover
+        opacity: 0.08;
+      }
+      &:not(:disabled):not([disabled]).text-button:hover, // Not disabled text button hover
+      &:not(:disabled):not([disabled]).outlined-button:hover, // Not disabled outlined button hover
+      &:not(:disabled):not([disabled]).icon-button:hover { // Not disabled icon button hover
+        background-color: rgba(ap-color('grey'), 0.08);
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):active:after, // Not disabled contained button pressing
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):focus:after { // Not disabled contained button focus
+        opacity: 0.24;
+      }
+      &:not(:disabled):not([disabled]).text-button:active, // Not disabled text button pressing
+      &:not(:disabled):not([disabled]).text-button:focus, // Not disabled text button focus
+      &:not(:disabled):not([disabled]).outlined-button:active, // Not disabled outlined button pressing
+      &:not(:disabled):not([disabled]).outlined-button:focus, // Not disabled outlined button focus
+      &:not(:disabled):not([disabled]).icon-button:active, // Not disabled icon button pressing
+      &:not(:disabled):not([disabled]).icon-button:focus { // Not disabled icon button focus
+        background-color: rgba(ap-color('grey'), 0.24);
+      }
+
+      &:not(:disabled):not([disabled]) { // Not disabled buttons
+        &:not(.text-button):not(.outlined-button):not(.icon-button) { // Contained button
+          background-color: ap-color('grey');
+          color: ap-text-color('grey');
+        }
+        &.text-button, // Text button
+        &.outlined-button, // Outlined button
+        &.icon-button { // Icon button
+          background-color: transparent;
+          color: ap-color('grey');
+        }
+      }
     }
 
-    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):hover:after {
-      opacity: 0.08;
-    }
-    &:not(:disabled):not([disabled]).text-button:hover,
-    &:not(:disabled):not([disabled]).outlined-button:hover {
-      background-color: rgba(map_get($theme, primary-color), 0.08);
+    &.primary-color { // Primary color
+      &:not(.text-button):not(.outlined-button):not(.icon-button):after { // Contained button hover
+        background-color: map_get($theme, primary-color-text);
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):hover:after { // Not disabled contained button hover
+        opacity: 0.08;
+      }
+      &:not(:disabled):not([disabled]).text-button:hover, // Not disabled text button hover
+      &:not(:disabled):not([disabled]).outlined-button:hover, // Not disabled outlined button hover
+      &:not(:disabled):not([disabled]).icon-button:hover { // Not disabled icon button hover
+        background-color: rgba(map_get($theme, primary-color), 0.08);
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):active:after, // Not disabled contained button pressing
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):focus:after { // Not disabled contained button focus
+        opacity: 0.24;
+      }
+      &:not(:disabled):not([disabled]).text-button:active, // Not disabled text button pressing
+      &:not(:disabled):not([disabled]).text-button:focus, // Not disabled text button focus
+      &:not(:disabled):not([disabled]).outlined-button:active, // Not disabled outlined button pressing
+      &:not(:disabled):not([disabled]).outlined-button:focus, // Not disabled outlined button focus
+      &:not(:disabled):not([disabled]).icon-button:active, // Not disabled icon button pressing
+      &:not(:disabled):not([disabled]).icon-button:focus { // Not disabled icon button focus
+        background-color: rgba(map_get($theme, primary-color), 0.24);
+      }
+
+      &:not(:disabled):not([disabled]) { // Not disabled buttons
+        &:not(.text-button):not(.outlined-button):not(.icon-button) { // Contained button
+          background-color: map_get($theme, primary-color);
+          color: map_get($theme, primary-color-text);
+        }
+        &.text-button, // Text button
+        &.outlined-button, // Outlined button
+        &.icon-button { // Icon button
+          background-color: transparent;
+          color: map_get($theme, primary-color);
+        }
+      }
     }
 
-    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):active:after,
-    &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):focus:after {
-      opacity: 0.24;
-    }
-    &:not(:disabled):not([disabled]).text-button:active,
-    &:not(:disabled):not([disabled]).text-button:focus,
-    &:not(:disabled):not([disabled]).outlined-button:active,
-    &:not(:disabled):not([disabled]).outlined-button:focus {
-      background-color: rgba(map_get($theme, primary-color), 0.24);
+    &.accent-color { // Accent color
+      &:not(.text-button):not(.outlined-button):not(.icon-button):after { // Contained button
+        background-color: map_get($theme, accent-color-text);
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):hover:after { // Not disabled contained button hover
+        opacity: 0.08;
+      }
+      &:not(:disabled):not([disabled]).text-button:hover, // Not disabled text button hover
+      &:not(:disabled):not([disabled]).outlined-button:hover, // Not disabled outlined button hover
+      &:not(:disabled):not([disabled]).icon-button:hover { // Not disabled icon button hover
+        background-color: rgba(map_get($theme, accent-color), 0.08);
+      }
+
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):active:after, // Not disabled contained button pressing
+      &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):focus:after { // Not disabled contained button focus
+        opacity: 0.24;
+      }
+      &:not(:disabled):not([disabled]).text-button:active, // Not disabled text button pressing
+      &:not(:disabled):not([disabled]).text-button:focus, // Not disabled text button focus
+      &:not(:disabled):not([disabled]).outlined-button:active, // Not disabled outlined button pressing
+      &:not(:disabled):not([disabled]).outlined-button:focus, // Not disabled outlined button focus
+      &:not(:disabled):not([disabled]).icon-button:active, // Not disabled icon button pressing
+      &:not(:disabled):not([disabled]).icon-button:focus { // Not disabled icon button focus
+        background-color: rgba(map_get($theme, accent-color), 0.24);
+      }
+
+      &:not(:disabled):not([disabled]) { // Not disabled buttons
+        &:not(.text-button):not(.outlined-button):not(.icon-button) { // Contained button
+          background-color: map_get($theme, accent-color);
+          color: map_get($theme, accent-color-text);
+        }
+        &.text-button, // Text button
+        &.outlined-button, // Outlined button
+        &.icon-button { // Outlined button
+          background-color: transparent;
+          color: map_get($theme, accent-color);
+        }
+      }
     }
   }
 }

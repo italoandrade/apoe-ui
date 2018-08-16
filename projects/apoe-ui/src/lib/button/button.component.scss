@@ -10,7 +10,7 @@
   //color: ap-text-color('grey');
   border: none;
   font-size: 14px;
-  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button) {
+  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button) {
     box-shadow: ap-elevation(2);
   }
   border-radius: 4px;
@@ -27,12 +27,12 @@
   &:active:not(:disabled):not([disabled]) {
     transition: background-color 200ms ap-easing('deceleration'),
     box-shadow 100ms ap-easing('deceleration');
-    &:not(.text-button):not(.outlined-button) {
+    &:not(.text-button):not(.outlined-button):not(.icon-button) {
       box-shadow: ap-elevation(8);
     }
   }
 
-  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):after {
+  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):after {
     content: '';
     position: absolute;
     left: 0;
@@ -43,8 +43,16 @@
     transition: opacity 180ms ap-easing('acceleration');
     opacity: 0;
   }
-  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):after:hover {
+  &:not(:disabled):not([disabled]):not(.text-button):not(.outlined-button):not(.icon-button):after:hover {
     transition: opacity 200ms ap-easing('deceleration');
+  }
+
+  &.icon-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 20px;
+    padding: 0 8px;
   }
 
   &:disabled, &[disabled] {

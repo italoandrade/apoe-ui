@@ -6,3 +6,8 @@
 ::ng-deep body {
   margin: 0;
 }
+
+::ng-deep .responsive {
+  width: 100%;
+  height: auto;
+}
