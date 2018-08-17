@@ -12,6 +12,8 @@
             "element",
             "ap",
             "kebab-case"
-        ]
+        ],
+      "no-input-rename": false,
+      "no-output-rename": false
     }
 }

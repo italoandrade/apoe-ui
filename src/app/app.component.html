@@ -1,3 +1,4 @@
-<ap-app-bar #appBar></ap-app-bar>
+<ap-app-bar #appBar (navigationButton)="isNavigationDrawerOpen = !isNavigationDrawerOpen;"></ap-app-bar>
+<ap-navigation-drawer #navigationDrawer [(isOpen)]="isNavigationDrawerOpen" *ngIf="isNavigationDrawerOpen"></ap-navigation-drawer>
 
 <router-outlet apoe-ui></router-outlet>

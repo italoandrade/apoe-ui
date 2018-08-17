@@ -7,4 +7,7 @@ import {Component, ViewChild} from '@angular/core';
 })
 export class AppComponent {
   @ViewChild('appBar') appBar;
+  @ViewChild('navigationDrawer') navigationDrawer;
+  isNavigationDrawerOpen = false;
 }
+

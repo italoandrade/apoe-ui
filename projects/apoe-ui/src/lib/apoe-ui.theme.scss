@@ -1,5 +1,5 @@
 @import "./core/core";
-@import "./button/button.theme";
+@import "components/button/button.theme";
 
 @mixin ap-theme($theme) {
   $primary-text-color: rgba(0, 0, 0, 0.87);

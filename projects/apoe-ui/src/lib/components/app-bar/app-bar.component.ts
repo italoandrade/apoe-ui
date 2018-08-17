@@ -1,4 +1,4 @@
-import {Component, HostBinding, HostListener} from '@angular/core';
+import {Component, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'ap-app-bar',
@@ -6,6 +6,7 @@ import {Component, HostBinding, HostListener} from '@angular/core';
   styleUrls: ['./app-bar.component.scss']
 })
 export class AppBarComponent {
+  @Output() navigationButton: EventEmitter<any> = new EventEmitter();
   @HostBinding('class.scrolled') isScrolled: boolean;
   title: string;
 

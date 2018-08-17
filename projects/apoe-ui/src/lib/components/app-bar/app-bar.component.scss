@@ -1,4 +1,4 @@
-@import "../core/core";
+@import "../../core/core";
 
 :host {
   position: fixed;
@@ -7,18 +7,18 @@
   width: 100%;
   height: 64px;
   background-color: white;
-  border-bottom: 1px solid rgba(black, .1);
-  box-shadow: ap-elevation(0);
+  //border-bottom: 1px solid rgb(229, 229, 229);
+  box-shadow: 0 1px 0 0 rgb(229, 229, 229);
   z-index: 1;
   display: flex;
   align-items: center;
-  padding: 0 8px;
 
   transition: box-shadow 200ms ap-easing('acceleration');
 
   &.scrolled {
-    border-bottom: none;
+    border-bottom-color: transparent;
     box-shadow: ap-elevation(4);
+    height: 64px;
 
     transition: box-shadow 250ms ap-easing('deceleration');
   }
@@ -29,7 +29,7 @@
 }
 
 .navigation-icon {
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 .logo {
