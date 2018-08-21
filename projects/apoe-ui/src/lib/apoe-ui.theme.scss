@@ -1,5 +1,6 @@
 @import "./core/core";
 @import "components/button/button.theme";
+@import "components/navigation-drawer/navigation-drawer.theme";
 
 @mixin ap-theme($theme) {
   $primary-text-color: rgba(0, 0, 0, 0.87);
@@ -40,4 +41,5 @@
   }
 
   @include ap-theme-button($theme);
+  @include ap-theme-navigation-drawer($theme);
 }

@@ -1,4 +1,11 @@
 <ap-app-bar #appBar (navigationButton)="isNavigationDrawerOpen = !isNavigationDrawerOpen;"></ap-app-bar>
-<ap-navigation-drawer #navigationDrawer [(isOpen)]="isNavigationDrawerOpen" *ngIf="isNavigationDrawerOpen"></ap-navigation-drawer>
+<ap-navigation-drawer #navigationDrawer type="dismissible"
+                      [(isOpen)]="isNavigationDrawerOpen"
+                      [@navigationDrawerEnterLeaveViewAnimation]="navigationDrawerOpenAnimation()"
+                      *ngIf="isNavigationDrawerOpen">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a routerLink="/app-bar" routerLinkActive="active">App bar</a>
+  <a routerLink="/button" routerLinkActive="active">Button</a>
+</ap-navigation-drawer>
 
 <router-outlet apoe-ui></router-outlet>

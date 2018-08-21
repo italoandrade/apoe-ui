@@ -56,7 +56,7 @@
         &.outlined-button, // Outlined button
         &.icon-button { // Icon button
           background-color: transparent;
-          color: ap-color('grey');
+          color: map_get($theme, primary-color-text);
         }
       }
     }

@@ -1,0 +1,33 @@
+@import "../../core/core";
+
+@mixin ap-theme-navigation-drawer($theme) {
+  ap-navigation-drawer {
+    a,
+    li {
+      color: map_get($theme, primary-text-color);
+
+      &:hover:after {
+        background-color: rgba(ap-color('grey'), 0.08);
+      }
+      &:focus:after,
+      &:active:after {
+        background-color: rgba(ap-color('grey'), 0.24);
+      }
+
+      &.active {
+        color: map_get($theme, primary-color);
+        &:after {
+          background-color: rgba(map_get($theme, primary-color), 0.1);
+        }
+        &:focus:after {
+          background-color: rgba(map_get($theme, primary-color), 0.15);
+        }
+        &:active:after {
+          background-color: rgba(map_get($theme, primary-color), 0.18);
+        }
+      }
+    }
+  }
+}
+
+
