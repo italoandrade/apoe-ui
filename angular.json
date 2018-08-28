@@ -48,13 +48,21 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "serve": {
+              "extractCss": true,
+              "namedChunks": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "verbose": true,
+              "sourceMap": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "apoe-demo:build"
+            "browserTarget": "apoe-demo:build:serve"
           },
           "configurations": {
             "production": {
