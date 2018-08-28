@@ -9,7 +9,8 @@ import {ButtonComponent} from './demo/button/button.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'home', redirectTo: '', pathMatch: 'full'},
-      {path: 'button', component: ButtonComponent}
+      {path: 'button', component: ButtonComponent},
+      {path: '**', redirectTo: '/not-found'}
     ])
   ],
   exports: [RouterModule]
