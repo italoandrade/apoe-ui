@@ -40,6 +40,15 @@
     color: $primary-text-color;
   }
 
+  a {
+    color: map_get($theme, primary-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   @include ap-theme-button($theme);
   @include ap-theme-navigation-drawer($theme);
 }
