@@ -34,8 +34,8 @@
 
 .logo {
   margin-left: 16px;
-
-  // TODO: Não está alinhado verticalmente
+  display: flex;
+  align-items: center;
 
   img {
     width: 46px;

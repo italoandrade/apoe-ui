@@ -1,1 +1,11 @@
+<div class="header">
+  <div class="navigation-icon">
+    <button ap-button class="icon-button" (click)="navigationButton.emit()">
+      <i class="material-icons">
+        arrow_back
+      </i>
+    </button>
+  </div>
+</div>
+<div #overlay class="navigation-drawer-overlay" [style.hidden]="!isOpen"></div>
 <ng-content></ng-content>

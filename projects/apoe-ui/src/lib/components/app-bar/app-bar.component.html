@@ -5,8 +5,8 @@
     </i>
   </button>
 </div>
-<div class="logo">
-  <img class="responsive" src="/assets/img/boneare-logo.png" alt="Boneare Café">
+<div class="logo" *ngIf="logo">
+  <img class="responsive" [src]="logo" alt="Boneare Café">
 </div>
 <div class="title">
   {{title}}

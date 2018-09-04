@@ -7,6 +7,7 @@ import {Component, EventEmitter, HostBinding, HostListener, Input, Output} from 
 })
 export class AppBarComponent {
   @Output() navigationButton: EventEmitter<any> = new EventEmitter();
+  @Input() logo: string;
   @HostBinding('class.scrolled') isScrolled: boolean;
   title: string;
 
