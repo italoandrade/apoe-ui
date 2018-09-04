@@ -1,7 +1,3 @@
-<h2>
-  Button Demo
-</h2>
-
 <h4>Types of elements</h4>
 <div>
   <ap-button>AP button</ap-button>
@@ -36,7 +32,7 @@
   <code [innerText]="'<ap-button>Contained button</ap-button>'"></code>
 </div>
 
-<h4>Types of buttons disabled</h4>
+<h4>Disabled buttons</h4>
 <div>
   <ap-button class="text-button" disabled>Text button disabled</ap-button>
 
@@ -50,5 +46,22 @@
 <div>
   <ap-button class="contained-button" disabled>Contained button disabled</ap-button>
 
-  <code [innerText]="'<ap-button disabled>Contained button disabled</ap-button>'"></code>
+  <code [innerText]="'<ap-button class=&quot;contained-button&quot; disabled>Contained button disabled</ap-button>'"></code>
+</div>
+
+<h4>Colored buttons</h4>
+<div>
+  <ap-button class="text-button primary-color">Text button colored</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;text-button primary-color&quot; disabled>Text button colored</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="outlined-button primary-color">Outlined button colored</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;outlined-button primary-color&quot; disabled>Outlined button colored</ap-button>'"></code>
+</div>
+<div>
+  <ap-button class="contained-button primary-color">Contained button colored</ap-button>
+
+  <code [innerText]="'<ap-button class=&quot;contained-button primary-color&quot;>Contained button colored</ap-button>'"></code>
 </div>
