@@ -1,0 +1,23 @@
+<h5 *ngIf="appComponent.isNavigationDrawerOpen">You are already seeing a live demo on the left</h5>
+<h5 *ngIf="!appComponent.isNavigationDrawerOpen">You can the see the example by clicking on the navigation drawer button in the app bar</h5>
+
+<h4>Default</h4>
+<div>
+  <code [innerText]="'<ap-navigation-drawer type=&quot;dismissible&quot;>
+  &emsp;&emsp;&emsp;&emsp;<a routerLink=&quot;/&quot; routerLinkActive=&quot;active&quot; [routerLinkActiveOptions]=&quot;{exact: true}&quot;>Home</a>
+  &emsp;&emsp;&emsp;&emsp;<a routerLink=&quot;/button&quot; routerLinkActive=&quot;active&quot;>Button</a>
+  </ap-navigation-drawer>'"></code>
+</div>
+
+<h4>Implemented with <a routerLink="/app-bar">app bar</a></h4>
+<div>
+  <code [innerText]="'<ap-navigation-drawer #navigationDrawer type=&quot;dismissible&quot;
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[@navigationDrawerEnterLeaveViewAnimation]=&quot;navigationDrawerOpenAnimation()&quot;
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*ngIf=&quot;isNavigationDrawerOpen&quot;
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(navigationButton)=&quot;isNavigationDrawerOpen = !isNavigationDrawerOpen;&quot;>
+  &emsp;&emsp;&emsp;&emsp;<a routerLink=&quot;/&quot; routerLinkActive=&quot;active&quot; [routerLinkActiveOptions]=&quot;{exact: true}&quot;>Home</a>
+  &emsp;&emsp;&emsp;&emsp;<a routerLink=&quot;/button&quot; routerLinkActive=&quot;active&quot;>Button</a>
+  </ap-navigation-drawer>'"></code>
+</div>
+
+<!--TODO: Example of other than dismissible-->

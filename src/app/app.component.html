@@ -1,11 +1,15 @@
-<ap-app-bar #appBar (navigationButton)="isNavigationDrawerOpen = !isNavigationDrawerOpen;"></ap-app-bar>
+<ap-app-bar #appBar
+            logo="/assets/img/boneare-logo.png"
+            (navigationButton)="isNavigationDrawerOpen = !isNavigationDrawerOpen;"></ap-app-bar>
 <ap-navigation-drawer #navigationDrawer type="dismissible"
                       [(isOpen)]="isNavigationDrawerOpen"
                       [@navigationDrawerEnterLeaveViewAnimation]="navigationDrawerOpenAnimation()"
-                      *ngIf="isNavigationDrawerOpen">
+                      *ngIf="isNavigationDrawerOpen"
+                      (navigationButton)="isNavigationDrawerOpen = !isNavigationDrawerOpen;">
   <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
   <a routerLink="/app-bar" routerLinkActive="active">App bar</a>
   <a routerLink="/button" routerLinkActive="active">Button</a>
+  <a routerLink="/navigation-drawer" routerLinkActive="active">Navigation drawer</a>
 </ap-navigation-drawer>
 
 <router-outlet apoe-ui></router-outlet>
