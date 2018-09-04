@@ -24,6 +24,10 @@
   transition: background-color 180ms ap-easing('acceleration'),
   box-shadow 80ms ap-easing('acceleration');
 
+  &:hover {
+    text-decoration: none;
+  }
+
   &:active:not(:disabled):not([disabled]) {
     transition: background-color 200ms ap-easing('deceleration'),
     box-shadow 100ms ap-easing('deceleration');
