@@ -10,21 +10,24 @@ import {AppRoutingModule} from './app-routing.module';
 import {ButtonComponent} from './demo/button/button.component';
 import {HomeComponent} from './demo/home/home.component';
 
+import {NotFoundComponent} from './demo/not-found/not-found.component';
+
 import {AppBarComponent} from './demo/app-bar/app-bar.component';
 import {NavigationDrawerComponent} from './demo/navigation-drawer/navigation-drawer.component';
-
-import {NotFoundComponent} from './demo/not-found/not-found.component';
+import {TextFieldComponent} from './demo/text-field/text-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
 
+    NotFoundComponent,
+
     AppBarComponent,
     ButtonComponent,
     NavigationDrawerComponent,
+    TextFieldComponent,
 
-    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
